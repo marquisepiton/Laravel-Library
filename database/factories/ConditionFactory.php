@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\ConditionTag;
+use App\Models\Condition;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ConditionTagFactory extends Factory
+class ConditionFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = ConditionTag::class;
+    protected $model = Condition::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +22,7 @@ class ConditionTagFactory extends Factory
     public function definition()
     {
         return [
-            'tag' => $this->faker->randomDigit,
+            'state' => $this->faker->text,
         ];
     }
 }
