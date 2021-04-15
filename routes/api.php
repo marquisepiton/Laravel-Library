@@ -19,13 +19,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //Create
-Route::get('/users/create',[App\Http\Controllers\UserController::class,'create']);
+Route::post('/user/create',[App\Http\Controllers\UserController::class,'create']);
 
 // Read 
 Route::get('/users/all',[App\Http\Controllers\UserController::class, 'index']);
 
 // Update
-Route::get('/users/update',[App\Http\Controllers\UserController::class,'update']);
+Route::post('/user/{id}/update',[App\Http\Controllers\UserController::class,'update']);
 
 // Delete
-Route::get('/users/delete',[App\Http\Controllers\UserController::class,'destroy']);
+Route::get('/user/{id}/delete',[App\Http\Controllers\UserController::class,'destroy']);

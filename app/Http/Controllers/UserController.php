@@ -27,11 +27,13 @@ class UserController extends Controller
   
     public function create(Request $request)
     {
-        $user = new User();
-        $user->name = $request->name;
-       
-        
-        $user->save();
+      $user = new User();
+      $user->name = $request->name;
+      $user->email = $request->email;
+      $user->password = $request->password;
+      
+      $user->save();
+       return User::all();
     }
    
     /**
@@ -54,7 +56,7 @@ class UserController extends Controller
     public function show(User $id)
     {
       
-      $user = User::find($id);
+      //$user = User::find($id);
 
     }
 
@@ -76,10 +78,12 @@ class UserController extends Controller
      * @param  \App\Models\Genre  $genre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $User)
+    public function update( $id)
     {
-        $user = User::find($id)
-        $user->name = 'Captin Deez Nuts'
+        $user= User::find($id);
+        $user->name = 'Captin Deez Nuts Unlimited';
+        $user->save();
+       return User::all();
     }
 
     /**
@@ -88,9 +92,9 @@ class UserController extends Controller
      * @param  \App\Models\Genre  $genre
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $id)
+    public function destroy($id)
     {
-       User::find($id)->delete();
+       User::destroy($id);
        return User::all();
     }
 }
