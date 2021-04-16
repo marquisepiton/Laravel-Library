@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
         GenreSeeder::class,
         UserSeeder::class,
         AuthorSeeder::class,
-        ConditionSeeder::class, 
-        ConditionTagSeeder::class,
+        ConditionSeeder::class,
+        BookSeeder::class,
       ]);
       
         

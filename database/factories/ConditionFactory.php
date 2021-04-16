@@ -22,7 +22,7 @@ class ConditionFactory extends Factory
     public function definition()
     {
         return [
-            'state' => $this->faker->text,
+            'state' => $this->faker->state,
         ];
     }
 }

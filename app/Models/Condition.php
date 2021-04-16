@@ -20,5 +20,9 @@ class Condition extends Model
       'state',
       
     ];
+  
+  public function books(){
+    return $this->hasMany(Book::class);
+  }
     
 }
