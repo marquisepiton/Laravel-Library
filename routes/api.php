@@ -17,3 +17,26 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// User CRUD
+//Create
+Route::post('/user/create',[App\Http\Controllers\UserController::class,'create']);
+
+// Read 
+Route::get('/users/all',[App\Http\Controllers\UserController::class, 'index']);
+
+// Update
+Route::post('/user/{id}/update',[App\Http\Controllers\UserController::class,'update']);
+
+// Delete
+Route::get('/user/{id}/delete',[App\Http\Controllers\UserController::class,'destroy']);
+
+// Author CRUD
+// Read 
+Route::get('/authors/all',[App\Http\Controllers\AuthorController::class, 'index']);
+
+// Genre CRUD
+// Read
+Route::get('/genres/all',[App\Http\Controllers\AuthorController::class, 'index']);
+
+
