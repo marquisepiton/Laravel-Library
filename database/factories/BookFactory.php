@@ -23,11 +23,10 @@ class BookFactory extends Factory
     {
         return [
             //
-         
           'name' => $this->faker->text,
-          'authorID'=> $this->faker->randomDigit,
-          'genre' => $this->faker->randomDigit,
-          'condition' => $this->faker->randomDigit,
+          'authorId'=> $this->faker->numberBetween( 1, 15),
+          'genreId' => $this->faker->numberBetween( 1, 15),
+          'conditionId' => $this->faker->numberBetween( 1, 15),
           'releaseDate'=>$this->faker->dateTime,
         ];
     }
